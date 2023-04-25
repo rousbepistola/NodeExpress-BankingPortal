@@ -70,6 +70,17 @@ app.post('/payment',(req, res)=>{
 })
 
 
+//create a function to add 2 numbers
+const addTwoNumbers = function(a,b){
+    return a+b
+}
+
+// a function to stringify json data
+const stringify = (json)=>{
+       return JSON.stringify(json)
+}
+
+
 
 app.listen(3000,()=>{
     console.log('PS Project Running on port 3000!')
