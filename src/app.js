@@ -43,8 +43,11 @@ app.post('/transfer',(req, res)=>{
 
     let fromAccount = accounts[from].balance
     let toAccount = accounts[to].balance
-    fromAccount = parseInt(fromAccount - amount)
-    toAccount = parseInt(toAccount + amount)
+    fromAccount -= parseFloat(amount)
+    toAccount += parseFloat(amount)
+
+    accounts[from].balance = fromAccount
+    accounts[to].balance = toAccount
 
     const accountsJSON = JSON.stringify(accounts)
 
